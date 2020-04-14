@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newpage</title>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        $(()=>{
+            //STEP 16
+            // $('button').click( ()=>{
+            //     alert("You have clicked!");
+            // });
+
+            //STEP 17
+            // $('button').bind('click',()=>{
+            //     alert("You have clicked!");
+            // });
+
+            //STEP 18
+            // $('button').on('click',()=>{
+            //     alert("You have clicked!");
+            // });
+
+            //STEP 19
+            // $('body').on({
+            //     click: ()=>{
+            //         alert("You have clicked!");
+            //     }
+            // }, 'button');
+
+            //STEP 20
+            // $('div').width('400px').height('400px').css('background-color', 'red');
+            // $('body').on({
+            //     click: ()=>{
+            //         alert("You have clicked!");
+            //     },
+            //     mouseenter: ()=>{
+            //         alert("You have entered!");
+            //     },
+            //     mouseleave: ()=>{ 
+            //         alert("You have left!");
+            //     }
+            // }, 'div');
+
+            //STEP 21
+            // $('div').width('400px').height('400px').css('background-color', 'gray');
+            // $('body').on({
+            //     click: ()=>{
+            //         $('span').text("You have clicked!");
+            //     },
+            //     mouseenter: ()=>{
+            //         $('span').text("You have entered!");
+            //     },
+            //     mouseleave: ()=>{ 
+            //         $('span').text("You have left!");
+            //     }
+            // }, 'div').css("font-size", '2em');
+
+            //STEP 22
+            // let x = $("a");
+            // x.click((event)=>{
+            //    event.preventDefault();
+            //     if (event.isDefaultPrevented){
+            //         x.css("color", "red");
+            //     }
+            //     alert(event.target.nodeName);
+            // });
+
+            //STEP 23
+            // let d = $('div');
+            // $(window).resize(()=>{
+            //     let x = d.width();
+            //     let y = d.height();
+            //     d.text("Weight: "+x+ "\nHeight: "+y);
+            // });
+
+            //STEP 24
+            //VARIABLE FOR THE INPUT
+            // let t = $('input');
+
+            // //FUNCTION FOCUS (IN)
+            // t.focus(()=>{
+            //     t.css("background-color", "gray");
+            // });
+
+            // //FUNCTION BLUR (OUT)
+            // t.blur(()=>{
+            //     t.css("background-color", "white");
+            // });
+
+            //STEP 25
+            //VARIABLES FOR TWO INPUTS
+            let inp1 = $('input:first'); 
+            let inp2 = $('input:last');
+            let both = $('input');
+
+            //IF REQUIRED FIELDS ARE EMPTY AND SUBMIT IT
+            $('form').submit(()=>{
+                if(!both.val()){
+                    alert("Both fields are required!");
+                    both.css("border", "2px solid red");
+                    return false;
+                }
+                else if(!inp1.val() && inp2.val()){
+                    alert("Required - Name field is empty!");
+                    inp1.css("border", "2px solid red");
+                    inp2.css("border", "2px solid green");
+                    return false;
+                }
+                else if(!inp2.val() && inp1.val()){
+                    alert("Required - Email field is empty!");
+                    inp1.css("border", "2px solid green");
+                    inp2.css("border", "2px solid red");
+                    return false;
+                }
+                else {
+                    both.css("border", "2px solid green");
+                    alert("Submitted!")
+                    return false; //TO KEEP SHOWING GREEN BOLDERS IF THE INPUTS ARE NOT EMPTY
+                }
+            });
+                        
+            
+        });
+    </script>
+</head>
+<body>
+    <!-- STEP 16, 17, 18 and 19-->
+    <!-- <button>CLICK 1</button>
+
+    <button>CLICK 2</button> -->
+
+    <!-- STEP 21 -->
+    <!-- <div></div>
+    <span></span> -->
+
+    <!-- STEP 22 -->
+    <!-- <a href="http://www.modulemedia.com">CLICK THIS LINK</a> -->
+
+    <!-- STEP 23 -->
+    <!-- <div></div> -->
+
+    <!-- STEP 24 -->
+    <!-- <label type="text"> -->
+
+    <!-- STEP 25 -->
+    <form action="">
+        <label>Name: <input></label>
+        <label>Email: <input></label>
+        <button value="submit">Submit</button>
+    </form>
+
+</body>
+</html>
